@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SQL Insights | Data & Bloom</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="sql-page">
+
+    <header class="sql-page-header">
+
+        <a href="projeto-duplicidades.html" class="sql-back-link">
+            ← Voltar ao projeto
+        </a>
+
+        <span class="sql-page-label">DATA & BLOOM · DATA STORIES</span>
+
+        <h1>SQL Insights</h1>
+
+        <p>
+            Consultas utilizadas na análise de registros duplicados
+            em cadastros escolares.
+        </p>
+
+        <span class="sql-page-tag">
+            SQL · SQLITE · QUALIDADE DE DADOS
+        </span>
+
+    </header>
+
+
+    <main class="sql-document">
+
+        <div class="sql-document-heading">
+            <span>PROJECT 01</span>
+            <h2>Consultas SQL completas</h2>
+            <p>
+                A seguir estão as consultas desenvolvidas durante
+                as etapas de exploração, identificação e classificação
+                dos registros.
+            </p>
+        </div>
+
+
+        <div class="sql-code-container">
+
+            <pre><code>-- =====================================================
+-- DATA & BLOOM | DADOS EM FOCO
+-- Projeto: Identificação de registros duplicados
+-- Banco de dados: SQLite
+-- Base de dados: Cadastros escolares simulados
+-- =====================================================
+
+
+-- 01. VISÃO GERAL DA BASE
+-- Total de registros e alunos distintos
+
+SELECT
+    COUNT(*) AS total_registros,
+    COUNT(DISTINCT id_aluno) AS total_alunos
+FROM cadastros_escolares;
+
+
+-- 02. IDENTIFICAÇÃO DE POSSÍVEIS DUPLICIDADES
+-- Alunos com mais de um registro
+
+SELECT
+    id_aluno,
+    nome_aluno,
+    COUNT(*) AS quantidade_registros
+FROM cadastros_escolares
+GROUP BY id_aluno, nome_aluno
+HAVING COUNT(*) > 1;
+
+
+-- 03. CLASSIFICAÇÃO DOS REGISTROS
+-- Numeração dos registros por aluno
+
+SELECT
+    id_aluno,
+    nome_aluno,
+    id_registro,
+    ROW_NUMBER() OVER (
+        PARTITION BY id_aluno
+        ORDER BY id_registro
+    ) AS ordem
+FROM cadastros_escolares;
+
+
+-- 04. PRIORIZAÇÃO COM REGRAS DE NEGÓCIO
+-- Ativos primeiro, depois matrícula mais recente
+-- Em caso de empate, maior ID de registro
+
+SELECT *
+FROM (
+    SELECT
+        id_registro,
+        id_aluno,
+        nome_aluno,
+        data_matricula,
+        escola,
+        status,
+        ROW_NUMBER() OVER (
+            PARTITION BY id_aluno
+            ORDER BY
+                CASE
+                    WHEN status = 'Ativo' THEN 1
+                    ELSE 2
+                END,
+                date(data_matricula) DESC,
+                id_registro DESC
+        ) AS ordem_prioridade
+    FROM cadastros_escolares
+) AS registros_classificados
+ORDER BY id_aluno, ordem_prioridade;
+
+
+-- 05. RESUMO DOS RESULTADOS
+-- Quantidade de registros e possíveis duplicidades
+
+SELECT
+    COUNT(*) AS total_registros,
+    COUNT(DISTINCT id_aluno) AS total_alunos,
+    COUNT(*) - COUNT(DISTINCT id_aluno) AS registros_adicionais,
+    ROUND(
+        (
+            (COUNT(*) - COUNT(DISTINCT id_aluno)) * 100.0
+        ) / COUNT(*),
+        2
+    ) AS percentual_registros_adicionais
+FROM cadastros_escolares;</code></pre>
+
+        </div>
+
+
+        <div class="sql-document-note">
+            <strong>Nota metodológica</strong>
+            <p>
+                Os dados utilizados neste projeto são simulados.
+                Os registros adicionais identificados representam
+                possíveis duplicidades e não devem ser excluídos
+                sem validação das regras de negócio.
+            </p>
+        </div>
+
+
+        <footer class="sql-page-footer">
+            <p>DATA & BLOOM · CURIOUSITY LOOKS GOOD ON YOU.</p>
+
+            <a href="projeto-duplicidades.html">
+                Voltar para Dados em Foco ↑
+            </a>
+        </footer>
+
+    </main>
+
+</body>
+</html>

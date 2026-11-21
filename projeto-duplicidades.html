@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dados em Foco | Data & Bloom</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <a href="index.html" class="logo">Data & Bloom</a>
+
+        <nav class="navigation">
+            <a href="index.html">Página inicial</a>
+            <a href="#sobre-projeto">O projeto</a>
+            <a href="#etapas">Etapas</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#sql-insights">SQL Insights</a>
+            <a href="#metodologia">Metodologia</a>
+            <a href="#ferramentas">Ferramentas</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- ABERTURA DO PROJETO -->
+        <section class="project-hero">
+
+            <span class="section-label">
+                DATA STORIES · PROJETO 01
+            </span>
+
+            <p class="project-edition">
+                DATA & BLOOM MAGAZINE
+            </p>
+
+            <h1>
+                Dados<br>
+                <em>em Foco</em>
+            </h1>
+
+            <p class="project-hero-subtitle">
+                Identificação de registros duplicados
+                em cadastros escolares
+            </p>
+
+            <div class="project-meta">
+                <span>SQL</span>
+                <span>SQLITE</span>
+                <span>QUALIDADE DE DADOS</span>
+            </div>
+
+        </section>
+
+
+        <!-- APRESENTAÇÃO -->
+        <section class="project-introduction" id="sobre-projeto">
+
+            <div class="project-section-heading">
+                <span class="section-label">
+                    01 · O DESAFIO
+                </span>
+
+                <h2>
+                    Quando o mesmo dado aparece mais de uma vez
+                </h2>
+            </div>
+
+            <div class="project-text">
+
+                <p>
+                    Imagine uma instituição de ensino que precisa
+                    manter milhares de registros de estudantes
+                    organizados e confiáveis.
+                </p>
+
+                <p>
+                    Durante o processo de matrícula, atualização
+                    cadastral ou importação de informações, um
+                    mesmo estudante pode acabar registrado mais
+                    de uma vez.
+                </p>
+
+                <p>
+                    Essas duplicidades podem comprometer a
+                    consistência das informações e afetar
+                    relatórios e análises.
+                </p>
+
+                <p class="project-highlight">
+                    A pergunta central deste estudo é:
+                    como identificar registros duplicados e
+                    estabelecer critérios para classificar
+                    o registro prioritário de cada aluno?
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- OBJETIVOS -->
+        <section class="project-objectives">
+
+            <span class="section-label">
+                02 · OBJETIVOS DA ANÁLISE
+            </span>
+
+            <h2>
+                O que queremos descobrir?
+            </h2>
+
+            <div class="objectives-grid">
+
+                <article class="objective-item">
+                    <span>01</span>
+                    <h3>Identificar</h3>
+                    <p>
+                        Localizar estudantes que aparecem
+                        em mais de um registro
+                    </p>
+                </article>
+
+                <article class="objective-item">
+                    <span>02</span>
+                    <h3>Investigar</h3>
+                    <p>
+                        Compreender a distribuição e as
+                        características das duplicidades
+                    </p>
+                </article>
+
+                <article class="objective-item">
+                    <span>03</span>
+                    <h3>Classificar</h3>
+                    <p>
+                        Aplicar critérios de prioridade para
+                        identificar o registro prioritário de cada aluno
+                    </p>
+                </article>
+
+                <article class="objective-item">
+                    <span>04</span>
+                    <h3>Avaliar</h3>
+                    <p>
+                         Interpretar os resultados e identificar
+                        registros adicionais para validação
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPAS -->
+        
+<!-- ETAPAS -->
+
+<section class="project-process" id="etapas">
+
+    <span class="section-label">
+        03 · PROCESSO DE ANÁLISE
+    </span>
+
+    <h2>
+        Da pergunta à descoberta
+    </h2>
+
+    <div class="process-list">
+
+        <div class="process-item">
+
+            <span>01</span>
+
+            <div>
+                <h3>Construção da base de dados</h3>
+
+                <p>
+                    Criação de uma base simulada com
+                    registros de matrículas escolares.
+                </p>
+            </div>
+
+            <small>CONCLUÍDO</small>
+
+        </div>
+
+
+        <div class="process-item">
+
+            <span>02</span>
+
+            <div>
+                <h3>Exploração com SQL</h3>
+
+                <p>
+                    Análise da quantidade de registros,
+                    alunos distintos e ocorrências repetidas.
+                </p>
+            </div>
+
+            <small>CONCLUÍDO</small>
+
+        </div>
+
+
+        <div class="process-item">
+
+            <span>03</span>
+
+            <div>
+                <h3>Classificação dos registros</h3>
+
+                <p>
+                    Aplicação de ROW_NUMBER() e critérios
+                    de prioridade para cada aluno.
+                </p>
+            </div>
+
+            <small>CONCLUÍDO</small>
+
+        </div>
+
+
+        <div class="process-item">
+
+            <span>04</span>
+
+            <div>
+                <h3>Resultados e interpretação</h3>
+
+                <p>
+                    Consolidação dos indicadores e
+                    elaboração da conclusão executiva.
+                </p>
+            </div>
+
+            <small>CONCLUÍDO</small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- RESULTADOS DA ANÁLISE -->
+<section class="project-results" id="resultados">
+
+    <span class="section-label">
+        04 · RESULTADOS
+    </span>
+
+    <div class="project-section-heading">
+        <h2>
+            O que os dados revelaram?
+        </h2>
+
+        <p>
+            Uma visão geral dos resultados encontrados
+            durante a análise dos cadastros escolares
+        </p>
+    </div>
+
+    <!-- INDICADORES -->
+    <div class="results-grid">
+
+        <article class="result-card">
+            <span class="result-number">15</span>
+            <h3>Registros analisados</h3>
+            <p>Volume total de cadastros na base</p>
+        </article>
+
+        <article class="result-card">
+            <span class="result-number">10</span>
+            <h3>Alunos distintos</h3>
+            <p>Identificadores únicos de alunos</p>
+        </article>
+
+        <article class="result-card">
+            <span class="result-number">10</span>
+            <h3>Cadastros prioritários</h3>
+            <p>Um registro selecionado por aluno</p>
+        </article>
+
+        <article class="result-card">
+            <span class="result-number">5</span>
+            <h3>Possíveis duplicidades</h3>
+            <p>Registros adicionais identificados</p>
+        </article>
+
+    </div>
+
+    <!-- DISTRIBUIÇÃO DOS REGISTROS -->
+    <div class="results-chart">
+
+        <h3>Distribuição dos registros analisados</h3>
+
+        <p>
+            Comparação entre cadastros prioritários
+            e registros adicionais
+        </p>
+
+        <div class="chart-item">
+
+            <div class="chart-label">
+                <span>Cadastros prioritários</span>
+                <strong>10 (66,67%)</strong>
+            </div>
+
+            <div class="chart-track">
+                <div class="chart-bar chart-primary"></div>
+            </div>
+
+        </div>
+
+        <div class="chart-item">
+
+            <div class="chart-label">
+                <span>Registros adicionais</span>
+                <strong>5 (33,33%)</strong>
+            </div>
+
+            <div class="chart-track">
+                <div class="chart-bar chart-secondary"></div>
+            </div>
+
+        </div>
+
+        <small>
+            Classificação baseada nos critérios de prioridade
+            definidos para este estudo simulado
+        </small>
+
+    </div>
+
+    <!-- CONCLUSÃO EXECUTIVA -->
+    <div class="executive-summary">
+
+        <span class="section-label">
+            EXECUTIVE SUMMARY
+        </span>
+
+        <h2>
+            Da identificação à tomada de decisão
+        </h2>
+
+        <p>
+            A análise dos cadastros escolares identificou
+            15 registros associados a 10 alunos distintos,
+            evidenciando a existência de registros adicionais
+            para alunos já presentes na base de dados.
+        </p>
+
+        <p>
+            Por meio de consultas SQL e da função
+            <strong>ROW_NUMBER()</strong>, foi desenvolvida
+            uma lógica de classificação que considera o
+            status da matrícula, a data do registro e o
+            identificador como critérios de prioridade.
+        </p>
+
+        <p>
+            Como resultado, foram selecionados 10 registros
+            prioritários e identificados 5 registros adicionais,
+            correspondentes a 33,33% do volume total analisado.
+        </p>
+
+        <p>
+            A regra aplicada priorizou matrículas com status
+            ativo e, em seguida, os registros mais recentes.
+            Essa abordagem permitiu organizar os dados e
+            identificar possíveis duplicidades de maneira
+            estruturada, sem realizar exclusões automáticas.
+        </p>
+
+        <div class="project-highlight">
+            <strong>Recomendação:</strong>
+            validar os registros classificados como possíveis
+            duplicidades junto às regras de negócio da
+            instituição antes de qualquer atualização ou
+            exclusão, evitando a perda de informações legítimas.
+        </div>
+
+    </div>
+
+    <p class="results-note">
+        Estudo desenvolvido com dados simulados para fins
+        de demonstração e aprendizado
+    </p>
+
+</section>
+
+
+
+
+<!-- SQL INSIGHTS -->
+<section class="sql-insights" id="sql-insights">
+
+    <span class="section-label">
+        05 · SQL INSIGHTS
+    </span>
+
+    <div class="project-section-heading">
+
+        <h2>
+            O pensamento por trás dos dados
+        </h2>
+
+        <p>
+            Consultas SQL desenvolvidas para investigar,
+            classificar e compreender os registros da
+            base de dados.
+        </p>
+
+    </div>
+
+    <div class="sql-insights-grid">
+
+        <!-- CONSULTA 01 -->
+        <article class="sql-card">
+
+            <span class="sql-card-number">QUERY 01</span>
+
+            <h3>Data Overview</h3>
+
+            <p>
+                Quantificação dos registros e identificação
+                da quantidade de alunos distintos na base.
+            </p>
+
+            <pre><code>SELECT
+    COUNT(*) AS total_registros,
+    COUNT(DISTINCT id_aluno) AS total_alunos
+FROM cadastros_escolares;</code></pre>
+
+            <div class="sql-card-result">
+                <strong>Resultado:</strong>
+                15 registros e 10 alunos distintos.
+            </div>
+
+            <span class="sql-technique">
+                COUNT() · DISTINCT
+            </span>
+
+        </article>
+
+
+        <!-- CONSULTA 02 -->
+        <article class="sql-card">
+
+            <span class="sql-card-number">QUERY 02</span>
+
+            <h3>Duplicate Detection</h3>
+
+            <p>
+                Identificação dos alunos que possuem
+                mais de um registro na tabela.
+            </p>
+
+            <pre><code>SELECT
+    id_aluno,
+    nome_aluno,
+    COUNT(*) AS quantidade
+FROM cadastros_escolares
+GROUP BY id_aluno, nome_aluno
+HAVING COUNT(*) > 1;</code></pre>
+
+            <div class="sql-card-result">
+                <strong>Resultado:</strong>
+                5 alunos identificados com múltiplos registros.
+            </div>
+
+            <span class="sql-technique">
+                GROUP BY · HAVING
+            </span>
+
+        </article>
+
+
+        <!-- CONSULTA 03 -->
+        <article class="sql-card">
+
+            <span class="sql-card-number">QUERY 03</span>
+
+            <h3>Record Classification</h3>
+
+            <p>
+                Classificação sequencial dos registros
+                de cada aluno, permitindo identificar
+                ocorrências repetidas.
+            </p>
+
+            <pre><code>SELECT
+    id_aluno,
+    nome_aluno,
+    id_registro,
+
+    ROW_NUMBER() OVER (
+        PARTITION BY id_aluno
+        ORDER BY id_registro
+    ) AS ordem
+
+FROM cadastros_escolares;</code></pre>
+
+            <div class="sql-card-result">
+                <strong>Resultado:</strong>
+                Numeração individual dos registros
+                de cada aluno.
+            </div>
+
+            <span class="sql-technique">
+                ROW_NUMBER() · PARTITION BY
+            </span>
+
+        </article>
+
+
+        <!-- CONSULTA 04 -->
+        <article class="sql-card">
+
+            <span class="sql-card-number">QUERY 04</span>
+
+            <h3>Business Rules</h3>
+
+            <p>
+                Aplicação de critérios de prioridade
+                para selecionar um registro por aluno
+            </p>
+
+            <pre><code>SELECT *
+FROM (
+    SELECT
+        id_registro,
+        id_aluno,
+        nome_aluno,
+        data_matricula,
+        escola,
+        status,
+        ROW_NUMBER() OVER (
+            PARTITION BY id_aluno
+            ORDER BY
+                CASE
+                    WHEN status = 'Ativo' THEN 1
+                    ELSE 2
+                END,
+                date(data_matricula) DESC,
+                id_registro DESC
+        ) AS ordem_prioridade
+    FROM cadastros_escolares
+) AS registros_classificados
+ORDER BY id_aluno, ordem_prioridade;</code></pre>
+
+            <div class="sql-card-result">
+                <strong>Resultado:</strong>
+                10 registros prioritários e 5 registros
+                adicionais classificados
+            </div>
+
+            <span class="sql-technique">
+                CASE WHEN · ORDER BY
+            </span>
+
+        </article>
+
+    </div>
+
+    <div class="sql-insights-footer">
+
+        <p>
+            Cada consulta representa uma etapa do processo
+            de investigação: conhecer os dados, localizar
+            repetições, classificar registros e aplicar
+            critérios de negócio
+        </p>
+
+    </div>
+
+
+    <div class="sql-download">
+        <a href="consultas-sql.html">
+            <span>↗</span>
+                Visualizar consultas SQL completas
+        </a>
+    </div>
+
+</section>
+
+
+
+<!-- METODOLOGIA E APRENDIZADOS -->
+
+<section class="methodology-section" id="metodologia">
+
+    <span class="section-label">06. PROJECT APPROACH</span>
+
+    <div class="methodology-heading">
+        <h2>Metodologia & Aprendizados</h2>
+
+        <p>
+            Mais do que identificar registros repetidos,
+            o projeto buscou compreender os dados, estabelecer
+            critérios de análise e interpretar os resultados
+            de forma estruturada.
+        </p>
+    </div>
+
+
+    <div class="methodology-grid">
+
+        <article class="methodology-card">
+
+            <span class="methodology-number">01</span>
+
+            <h3>Investigação</h3>
+
+            <p>
+                Exploração de uma base simulada com 15 registros
+                e 10 identificadores distintos de alunos,
+                compreendendo sua estrutura e características.
+            </p>
+
+        </article>
+
+
+        <article class="methodology-card">
+
+            <span class="methodology-number">02</span>
+
+            <h3>Identificação</h3>
+
+            <p>
+                Aplicação de GROUP BY, HAVING e COUNT para
+                identificar alunos associados a mais de
+                um registro na base.
+            </p>
+
+        </article>
+
+
+        <article class="methodology-card">
+
+            <span class="methodology-number">03</span>
+
+            <h3>Regras de negócio</h3>
+
+            <p>
+                Utilização de CASE e ROW_NUMBER() para
+                classificar registros considerando status,
+                data de matrícula e identificador.
+            </p>
+
+        </article>
+
+
+        <article class="methodology-card">
+
+            <span class="methodology-number">04</span>
+
+            <h3>Interpretação</h3>
+
+            <p>
+                Consolidação dos resultados, identificação
+                de registros adicionais e reconhecimento
+                da importância da validação antes de
+                qualquer alteração nos dados.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <div class="methodology-learning">
+
+        <span>KEY LEARNING</span>
+
+        <p>
+            A qualidade dos dados não depende apenas de
+            encontrar inconsistências, mas também de
+            compreender o contexto e definir critérios
+            adequados para tratá-las.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+        <!-- FERRAMENTAS -->
+        
+<section class="project-tools" id="ferramentas">
+
+    <span class="section-label">
+        07 · FERRAMENTAS
+    </span>
+
+    <h2>
+        Tecnologia aplicada à análise
+    </h2>
+
+    <div class="project-tools-list">
+        <span>SQL</span>
+        <span>SQLite</span>
+        <span>DBeaver</span>
+        <span>Visual Studio Code</span>
+    </div>
+
+    <p>
+        O SQLite foi utilizado para armazenamento e consulta
+        dos dados. O DBeaver foi utilizado como ambiente
+        de execução das consultas SQL, enquanto o Visual
+        Studio Code foi utilizado no desenvolvimento
+        da apresentação do projeto.
+    </p>
+
+</section>
+
+
+
+        <!-- STATUS -->
+       
+<section class="project-progress">
+
+    <span class="section-label">
+        STATUS DO PROJETO
+    </span>
+
+    <h2>
+        Análise SQL concluída
+    </h2>
+
+    <p>
+        A etapa de exploração, classificação e interpretação
+        dos registros foi concluída. Os resultados foram
+        documentados e organizados para apresentação.
+        As próximas possibilidades incluem a criação de
+        visualizações interativas e o aprofundamento
+        da análise da qualidade dos dados.
+    </p>
+
+</section>
+
+
+
+        <!-- VOLTAR -->
+        <div class="project-back">
+            <a href="index.html#projetos">
+                ← VOLTAR À DATA & BLOOM
+            </a>
+        </div>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+
+        <p>DATA & BLOOM</p>
+
+        <span>
+            Curiosity looks good on you!
+        </span>
+
+        <small>
+            © 2026 Data & Bloom Magazine
+        </small>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
