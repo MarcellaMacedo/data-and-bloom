@@ -2643,3 +2643,56 @@ button:focus-visible {
     }
 
 }
+
+/* ==========================================
+   BOTÃO VOLTAR AO TOPO
+========================================== */
+
+.botao-voltar-topo {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: #A99ABF;
+    color: #FFFFFF;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(85, 64, 91, 0.22);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease,
+                transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.botao-voltar-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.botao-voltar-topo:hover {
+    background-color: #55405B;
+    transform: translateY(-3px);
+}
+
+.botao-voltar-topo:focus-visible {
+    outline: 3px solid #E8BD72;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .botao-voltar-topo {
+        width: 44px;
+        height: 44px;
+        right: 18px;
+        bottom: 18px;
+    }
+}
