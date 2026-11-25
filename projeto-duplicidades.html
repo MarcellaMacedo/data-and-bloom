@@ -22,6 +22,7 @@
             <a href="#etapas">Etapas</a>
             <a href="#resultados">Resultados</a>
             <a href="#sql-insights">SQL Insights</a>
+            <a href="#dashboard">Dashboard</a>
             <a href="#metodologia">Metodologia</a>
             <a href="#ferramentas">Ferramentas</a>
         </nav>
@@ -54,6 +55,8 @@
             <div class="project-meta">
                 <span>SQL</span>
                 <span>SQLITE</span>
+                <span>POWER BI</span>
+                <span>DAX</span>
                 <span>QUALIDADE DE DADOS</span>
             </div>
 
@@ -160,7 +163,6 @@
         </section>
 
 
-        <!-- ETAPAS -->
         
 <!-- ETAPAS -->
 
@@ -378,6 +380,13 @@
         </p>
 
         <p>
+            Para complementar a análise, foi desenvolvido um
+            dashboard no Power BI Desktop, reunindo os principais
+            indicadores, a distribuição dos registros e a
+            classificação em uma apresentação visual.
+        </p>
+
+        <p>
             A regra aplicada priorizou matrículas com status
             ativo e, em seguida, os registros mais recentes.
             Essa abordagem permitiu organizar os dados e
@@ -404,12 +413,71 @@
 
 
 
+<!-- POWER BI DASHBOARD -->
+
+<section class="powerbi-section" id="dashboard">
+
+    <span class="section-label">
+        05 · POWER BI DASHBOARD
+    </span>
+
+    <div class="project-section-heading">
+
+        <h2>
+            Visão dos dados
+        </h2>
+
+        <p>
+            O dashboard reúne os principais indicadores,
+            a distribuição dos registros e a classificação
+            dos cadastros escolares, transformando os
+            resultados da análise em informações visuais.
+        </p>
+
+    </div>
+
+    <figure class="powerbi-figure">
+
+        <a
+            href="imagens/dashboard-dados-em-foco.png"
+            target="_blank"
+            rel="noopener"
+            aria-label="Abrir dashboard em tamanho original"
+        >
+            <img
+                src="imagens/dashboard-dados-em-foco.png"
+                alt="Dashboard desenvolvido no Power BI com indicadores de cadastros escolares, registros por aluno, distribuição por situação cadastral, classificação dos registros e tabela detalhada."
+                class="powerbi-dashboard-image"
+                loading="lazy"
+                width="2952"
+                height="1692"
+            >
+        </a>
+
+        <figcaption>
+            Dashboard desenvolvido no Power BI Desktop
+            com base simulada de 15 registros.
+        </figcaption>
+
+    </figure>
+
+    <p class="powerbi-note">
+        A imagem apresenta uma exportação estática
+        do relatório. Os dados utilizados são simulados
+        e não foram realizadas exclusões automáticas
+        de registros.
+    </p>
+
+</section>
+
+
+
 
 <!-- SQL INSIGHTS -->
 <section class="sql-insights" id="sql-insights">
 
     <span class="section-label">
-        05 · SQL INSIGHTS
+        06 · SQL INSIGHTS
     </span>
 
     <div class="project-section-heading">
@@ -603,7 +671,7 @@ ORDER BY id_aluno, ordem_prioridade;</code></pre>
 
 <section class="methodology-section" id="metodologia">
 
-    <span class="section-label">06. PROJECT APPROACH</span>
+    <span class="section-label">07. METODOLOGIA E APRENDIZADOS</span>
 
     <div class="methodology-heading">
         <h2>Metodologia & Aprendizados</h2>
@@ -706,7 +774,7 @@ ORDER BY id_aluno, ordem_prioridade;</code></pre>
 <section class="project-tools" id="ferramentas">
 
     <span class="section-label">
-        07 · FERRAMENTAS
+        08 · FERRAMENTAS
     </span>
 
     <h2>
@@ -717,15 +785,20 @@ ORDER BY id_aluno, ordem_prioridade;</code></pre>
         <span>SQL</span>
         <span>SQLite</span>
         <span>DBeaver</span>
+        <span>Power BI Desktop</span>
+        <span>DAX</span>
         <span>Visual Studio Code</span>
     </div>
 
     <p>
         O SQLite foi utilizado para armazenamento e consulta
-        dos dados. O DBeaver foi utilizado como ambiente
-        de execução das consultas SQL, enquanto o Visual
-        Studio Code foi utilizado no desenvolvimento
-        da apresentação do projeto.
+        dos dados. <br>
+        O DBeaver foi utilizado como ambiente
+        de execução das consultas SQL. <br>
+        No Power BI Desktop,foram desenvolvidas colunas calculadas, medidas DAX
+        e visualizações para apresentar os resultados da análise. <br>
+        O Visual Studio Code foi utilizado no desenvolvimento
+        das páginas do portfólio.
     </p>
 
 </section>
@@ -741,16 +814,20 @@ ORDER BY id_aluno, ordem_prioridade;</code></pre>
     </span>
 
     <h2>
-        Análise SQL concluída
+        Análise SQL e Dashboard Power BI concluídos
     </h2>
 
     <p>
         A etapa de exploração, classificação e interpretação
-        dos registros foi concluída. Os resultados foram
-        documentados e organizados para apresentação.
-        As próximas possibilidades incluem a criação de
-        visualizações interativas e o aprofundamento
-        da análise da qualidade dos dados.
+        dos registros foi concluída com SQL.<br> 
+        Os resultados foram consolidados em um dashboard desenvolvido
+        no Power BI Desktop, reunindo indicadores, gráficos
+        e detalhamento dos registros. <br>
+
+        A imagem apresentada nesta página corresponde
+        a uma exportação estática do dashboard. <br>
+        Os filtros e recursos interativos do relatório não estão
+        disponíveis nesta visualização.
     </p>
 
 </section>

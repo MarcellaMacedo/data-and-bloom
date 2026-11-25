@@ -2563,3 +2563,83 @@ button:focus-visible {
     }
 }
 
+
+
+/* ==========================================
+   POWER BI DASHBOARD — DATA & BLOOM
+========================================== */
+
+.powerbi-section {
+    padding: 70px 5%;
+    background: var(--paper-light);
+}
+
+.powerbi-figure {
+    width: 100%;
+    max-width: 1120px;
+    margin: 40px auto 0;
+    padding: 12px;
+
+    background: var(--paper-cover);
+    border: 1px solid rgba(85, 64, 91, 0.16);
+    border-radius: 14px;
+
+    box-shadow: 6px 8px 0 rgba(85, 64, 91, 0.07);
+}
+
+.powerbi-figure a {
+    display: block;
+    line-height: 0;
+}
+
+.powerbi-dashboard-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.powerbi-figure figcaption {
+    padding: 12px 6px 4px;
+
+    color: var(--mauve);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.powerbi-note {
+    max-width: 1120px;
+    margin: 20px auto 0;
+
+    color: var(--mauve);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 650px) {
+
+    .powerbi-section {
+        padding: 45px 18px;
+    }
+
+    .powerbi-figure {
+        padding: 6px;
+        margin-top: 25px;
+        border-radius: 10px;
+    }
+
+    .powerbi-figure figcaption {
+        font-size: 0.75rem;
+    }
+
+    .powerbi-note {
+        font-size: 0.8rem;
+    }
+
+}
